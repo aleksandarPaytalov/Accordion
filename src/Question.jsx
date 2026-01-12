@@ -7,8 +7,14 @@ const Question = ({ title, info }) => {
     <article className="question">
       <header>
         <h5>{title}</h5>
+        <button
+          className="question-btn"
+          onClick={() => setShowInfo(() => !show)}
+        >
+          {show ? <AiOutlineMinus /> : <AiOutlinePlus />}
+        </button>
       </header>
-      <p>{info}</p>
+      {show && <p>{info}</p>}
     </article>
   );
 };
